@@ -12,36 +12,33 @@ export function WardUpsert() {
   const state = useSelector((state) => state);
   console.log(state);
 
-  const [firstName, setFirstName] = useState(state.ward.refward.firstName);
-  const [lastName, setLastName] = useState(state.ward.refward.lastName);
-  const [userName, setUserName] = useState(state.ward.refward.userName);
-  const [password, setPassword] = useState(state.ward.refward.password);
-  const [email, setEmail] = useState(state.ward.refward.email);
-  const [mobile, setMobile] = useState(state.ward.refward.mobile);
+  const [id, setid] = useState(state.ward.refward.id);
+  const [name, setname] = useState(state.ward.refward.name);
+  const [floor, setfloor] = useState(state.ward.refward.floor);
+  const [oxygenAvalaibility, setoxygenAvailability] = useState(state.ward.refward.oxygenAvalaibility);
+  const [vacancyStatus, setvacancyStatus] = useState(state.ward.refward.vacancyStatus);
 
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
 
-  const updateFirstName = (e) => setFirstName(e.target.value);
-  const updateLastName = (e) => setLastName(e.target.value);
-  const updateUserName = (e) => setUserName(e.target.value);
-  const updatePassword = (e) => setPassword(e.target.value);
-  const updateEmail = (e) => setEmail(e.target.value);
-  const updateMobile = (e) => setMobile(e.target.value);
+  const updateid = (e) => setid(e.target.value);
+  const updatename = (e) => setname(e.target.value);
+  const updatefloor = (e) => setfloor(e.target.value);
+  const updateoxygenAvailability = (e) => setoxygenAvailability(e.target.value);
+  const updatevacancyStatus = (e) => setvacancyStatus(e.target.value);
 
   const addWard = (e) => {
     e.preventDefault();
-    console.log(firstName, lastName, userName, password, email, mobile);
+    console.log(id, name, floor, oxygenAvalaibility, vacancyStatus);
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
       createWardAction({
-        firstName,
-        lastName,
-        userName,
-        email,
-        password,
-        mobile,
+        id,
+        name,
+        floor,
+        oxygenAvalaibility,
+        vacancyStatus,
       })
     );
 
@@ -53,34 +50,31 @@ export function WardUpsert() {
     // history.push("/list-employee");
 
     // reset the form
-    setFirstName("");
-    setLastName("");
-    setUserName("");
-    setPassword("");
-    setEmail("");
-    setMobile("");
+    setid("");
+    setname("");
+    setfloor("");
+    setoxygenAvailability("");
+    setvacancyStatus("");
   };
 
   const updateWard = () => {
     dispatch(
       updateWardAction({
         id: state.ward.refward.id,
-        firstName,
-        lastName,
-        userName,
-        email,
-        mobile,
-        password,
+        id,
+        name,
+        floor,
+        oxygenAvalaibility,
+        vacancyStatus,
       })
     );
 
     // reset the form
-    setFirstName("");
-    setLastName("");
-    setUserName("");
-    setPassword("");
-    setEmail("");
-    setMobile("");
+    setid("");
+    setname("");
+    setfloor("");
+    setoxygenAvailability("");
+    setvacancyStatus("");
   };
 
   return (
@@ -99,60 +93,50 @@ export function WardUpsert() {
         <div className="mb-1">
           <input
             type="text"
-            value={firstName}
-            onChange={(e) => updateFirstName(e)}
+            value={id}
+            onChange={(e) => updateid(e)}
             className="form-control"
-            placeholder="Enter First name"
+            placeholder="Enter Ward id"
           />
         </div>
 
         <div className="mb-1">
           <input
             type="text"
-            value={lastName}
-            onChange={(e) => updateLastName(e)}
+            value={name}
+            onChange={(e) => updatename(e)}
             className="form-control"
-            placeholder="Enter Lastname"
+            placeholder="Enter Ward name"
           />
         </div>
 
         <div className="mb-1">
           <input
             type="text"
-            value={userName}
-            onChange={(e) => updateUserName(e)}
+            value={floor}
+            onChange={(e) => updatefloor(e)}
             className="form-control"
-            placeholder="Enter Username"
-          />
-        </div>
-
-        <div className="mb-1">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => updatePassword(e)}
-            className="form-control"
-            placeholder="Enter Password"
+            placeholder="Enter Ward floor"
           />
         </div>
 
         <div className="mb-1">
           <input
             type="text"
-            value={email}
-            onChange={(e) => updateEmail(e)}
+            value={oxygenAvalaibility}
+            onChange={(e) => updateoxygenAvailability(e)}
             className="form-control"
-            placeholder="Enter Email"
+            placeholder="Enter Oxygen Availability Status"
           />
         </div>
 
         <div className="mb-1">
           <input
             type="text"
-            value={mobile}
-            onChange={(e) => updateMobile(e)}
+            value={vacancyStatus}
+            onChange={(e) => updatevacancyStatus(e)}
             className="form-control"
-            placeholder="Enter Mobile"
+            placeholder="Enter Ward Vacancy Status"
           />
         </div>
 

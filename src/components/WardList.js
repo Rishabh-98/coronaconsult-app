@@ -55,22 +55,22 @@ export function WardList() {
           <table className="table">
             <thead className="thead-dark">
               <tr>
-                <th scope="col">#ID</th>
-                <th scope="col">USERNAME</th>
-                <th scope="col">PASSWORD</th>
-                <th scope="col">EMAIL</th>
-                <th scope="col">MOBILE</th>
-                <th scope="col">Actions</th>
+                <th scope="col">WARD ID</th>
+                <th scope="col">WARD NAME</th>
+                <th scope="col">WARD FLOOR</th>
+                <th scope="col">WARD OXYGEN AVAILABILITY STATUS</th>
+                <th scope="col">WARD VACANCY STATUS</th>
+                <th scope="col">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
               {[...state.ward.list].map((item, index) => (
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
-                  <td>{item.userName}</td>
-                  <td>{"********"}</td>
-                  <td>{"****@gmail.com"}</td>
-                  <td>{item.mobile}</td>
+                  <td>{item.name}</td>
+                  <td>{item.floor}</td>
+                  <td>{item.oxygenAvailability}</td>
+                  <td>{item.vacancyStatus}</td>
                   <td>
                     <input
                       type="button"
