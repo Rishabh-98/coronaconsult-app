@@ -21,7 +21,7 @@ export function createWardAction(payload) {
   // MAKE SURE redux-thunk is installed.
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = "http://localhost:8080/api/employee/";
+    const url = "http://localhost:8080/api/ward/";
     const requestBody = { ...payload, age: 30 };
 
     // HTTP Client
@@ -40,7 +40,7 @@ export function updateWardAction(payload) {
   // return { type: WARD_UPDATE, payload: payload };
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = `http://localhost:8080/api/employee/${payload.id}`;
+    const url = `http://localhost:8080/api/ward/${payload.id}`;
     const requestBody = { ...payload, age: 25 };
 
     await fetch(url, {
@@ -59,7 +59,7 @@ export function deleteWardAction(payload) {
 
   // redux thunk
   return async (dispatch) => {
-    const url = `http://localhost:8080/api/employee/${payload.id}`;
+    const url = `http://localhost:8080/api/ward/${payload.id}`;
     await fetch(url, { method: "DELETE" });
 
     // update the ui.
@@ -73,7 +73,7 @@ export function getAllWardAction(payload) {
   // API CALL/BACKEND CALL / REDUX-THUNK IS THERE
   return async (dispatch) => {
     // WE HV TO CALL THE SPRINT1 / SPRING BOOT
-    const url = "http://localhost:8080/api/employee/";
+    const url = "http://localhost:8080/api/ward/";
 
     // HTTP Client / POSTMAN / SWAGGER
     const response = await fetch(url);
@@ -88,7 +88,7 @@ export function getAllWardAction(payload) {
 export function getByIdWardAction(payload) {
   // return { type: WARD_GET_BY_ID, payload: payload };
   return async (dispatch) => {
-    const url = `http://localhost:8080/api/employee/${payload.id}`;
+    const url = `http://localhost:8080/api/ward/${payload.id}`;
     const response = await fetch(url);
     const wardObj = await response.json();
 
