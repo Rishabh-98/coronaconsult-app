@@ -57,10 +57,10 @@ export function WardList() {
               <tr>
                 <th scope="col">ID#</th>
                 <th scope="col">WARD ID</th>
-                <th scope="col">WARD NAME</th>
-                <th scope="col">WARD FLOOR</th>
-                <th scope="col">WARD OXYGEN AVAILABILITY STATUS</th>
-                <th scope="col">WARD VACANCY STATUS</th>
+                <th scope="col">NAME</th>
+                <th scope="col">FLOOR</th>
+                <th scope="col">OXYGEN AVAILABILITY</th>
+                <th scope="col">VACANCY STATUS</th>
                 <th scope="col">ACTIONS</th>
               </tr>
             </thead>

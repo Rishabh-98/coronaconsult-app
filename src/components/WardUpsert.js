@@ -87,7 +87,7 @@ export function WardUpsert() {
 
         {/** BELOW THESE TWO TAGS MUST BE CONDITIOANL */}
         {successOperation && (
-          <div className="alert alert-success">Opeation Success</div>
+          <div className="alert alert-success">Operation Success</div>
         )}
 
         <div className="mb-1">

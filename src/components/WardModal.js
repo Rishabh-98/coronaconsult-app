@@ -13,24 +13,21 @@ export function WardModal() {
   return (
     <Modal show={state.ward.refward.id} onHide={() => updateRefObj()}>
       <Modal.Header closeButton>
-        <Modal.Title>Hello, {state.ward.refward.userName}</Modal.Title>
+        <Modal.Title>Hello, {state.ward.refward.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <ListGroup>
           <ListGroup.Item>
-            First Name - {state.ward.refward.firstName}
+            Ward ID - {state.ward.refward.ID}
           </ListGroup.Item>
           <ListGroup.Item>
-            Last Name - {state.ward.refward.lastName}
+            Name - {state.ward.refward.name}
           </ListGroup.Item>
           <ListGroup.Item>
-            User Name - {state.ward.refward.userName}
+            Floor - {state.ward.refward.floor} 
           </ListGroup.Item>
-          <ListGroup.Item>Password - {"*********"}</ListGroup.Item>
-          <ListGroup.Item>Email - {"******@gmail.com"}</ListGroup.Item>
-          <ListGroup.Item>
-            Mobile - {state.ward.refward.mobile}
-          </ListGroup.Item>
+          <ListGroup.Item>Oxygen Availability - {state.ward.refward.oxygenAvailability}</ListGroup.Item>
+          <ListGroup.Item>Vacancy Status - {state.ward.refward.vacancyStatus}</ListGroup.Item>
         </ListGroup>
       </Modal.Body>
       <Modal.Footer>
