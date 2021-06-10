@@ -12,7 +12,7 @@ export function WardUpsert() {
   const state = useSelector((state) => state);
   console.log(state);
 
-  const [id, setid] = useState(state.ward.refward.id);
+  const [ID, setID] = useState(state.ward.refward.ID);
   const [name, setname] = useState(state.ward.refward.name);
   const [floor, setfloor] = useState(state.ward.refward.floor);
   const [oxygenAvalaibility, setoxygenAvailability] = useState(state.ward.refward.oxygenAvalaibility);
@@ -21,7 +21,7 @@ export function WardUpsert() {
   const [successOperation, setSuccessOperation] = useState(false);
   const [errorOperation, setErrorOperation] = useState(false);
 
-  const updateid = (e) => setid(e.target.value);
+  const updateID = (e) => setID(e.target.value);
   const updatename = (e) => setname(e.target.value);
   const updatefloor = (e) => setfloor(e.target.value);
   const updateoxygenAvailability = (e) => setoxygenAvailability(e.target.value);
@@ -29,12 +29,12 @@ export function WardUpsert() {
 
   const addWard = (e) => {
     e.preventDefault();
-    console.log(id, name, floor, oxygenAvalaibility, vacancyStatus);
+    console.log(ID, name, floor, oxygenAvalaibility, vacancyStatus);
 
     // THIS IS REDUX ACTION CALLING
     dispatch(
       createWardAction({
-        id,
+        ID,
         name,
         floor,
         oxygenAvalaibility,
@@ -47,10 +47,10 @@ export function WardUpsert() {
     setTimeout(() => setSuccessOperation(false), 5000);
 
     // A2: navigate to another page
-    // history.push("/list-employee");
+    history.push("/list-ward");
 
     // reset the form
-    setid("");
+    setID("");
     setname("");
     setfloor("");
     setoxygenAvailability("");
@@ -61,7 +61,7 @@ export function WardUpsert() {
     dispatch(
       updateWardAction({
         id: state.ward.refward.id,
-        id,
+        ID,
         name,
         floor,
         oxygenAvalaibility,
@@ -70,7 +70,7 @@ export function WardUpsert() {
     );
 
     // reset the form
-    setid("");
+    setID("");
     setname("");
     setfloor("");
     setoxygenAvailability("");
@@ -93,8 +93,8 @@ export function WardUpsert() {
         <div className="mb-1">
           <input
             type="text"
-            value={id}
-            onChange={(e) => updateid(e)}
+            value={ID}
+            onChange={(e) => updateID(e)}
             className="form-control"
             placeholder="Enter Ward id"
           />
@@ -146,7 +146,7 @@ export function WardUpsert() {
               type="button"
               className="btn btn-secondary w-100"
               value="Update Ward"
-              onClick={() => updateWard()}
+              onClick={(e) => updateWard()}
             />
           ) : (
             <input

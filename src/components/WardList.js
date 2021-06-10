@@ -55,6 +55,7 @@ export function WardList() {
           <table className="table">
             <thead className="thead-dark">
               <tr>
+                <th scope="col">ID#</th>
                 <th scope="col">WARD ID</th>
                 <th scope="col">WARD NAME</th>
                 <th scope="col">WARD FLOOR</th>
@@ -67,6 +68,7 @@ export function WardList() {
               {[...state.ward.list].map((item, index) => (
                 <tr key={index}>
                   <th scope="row">{item.id}</th>
+                  <td>{item.ID}</td>
                   <td>{item.name}</td>
                   <td>{item.floor}</td>
                   <td>{item.oxygenAvailability}</td>
